@@ -10,7 +10,7 @@ Any bugs report here in the topic or [HERE](https://phpbb-bg.info/forums/viewfor
 
 [Offical validated by phpBB Validation Team](https://www.phpbb.com/community/viewtopic.php?t=2622781)
 
-Announcement topic phpBB 3.3.x
+phpBB Version: 3.3.11
 
 [ONLINE DEMO](https://demo.phpbb-bg.info/index.php?style=36)
 
