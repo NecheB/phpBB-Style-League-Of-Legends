@@ -8,7 +8,7 @@ Style Description: League Of Legends Gaming dark style
 
 Any bugs report here in the topic or [HERE](https://phpbb-bg.info/forums/viewforum.php?f=80).
 
-[Offical validated by phpBB Validation Team](https://www.phpbb.com/community/viewtopic.php?t=2622781)
+[Official validated by phpBB Validation Team](https://www.phpbb.com/community/viewtopic.php?t=2622781)
 
 phpBB Version: 3.3.11
 
