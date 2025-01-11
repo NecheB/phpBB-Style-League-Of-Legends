@@ -5,19 +5,10 @@
 
 <div id="page-footer" class="page-footer" role="contentinfo">
 	<!-- INCLUDE navbar_footer.html -->
-<hr>
 
 	<div class="copyright">
-	  <div class="footer-row-style">
 		<!-- EVENT overall_footer_copyright_prepend -->
-		<p class="footer-row">
-			<span class="footer-copyright">{{ CREDIT_LINE }}</span>
-		</p>
-		<!-- IF TRANSLATION_INFO -->
-		<p class="footer-row">
-			<span class="footer-copyright">{{ TRANSLATION_INFO }}</span>
-		</p>
-		<!-- ENDIF -->
+		
 		<!-- EVENT overall_footer_copyright_append -->
 		<p class="footer-row" role="menu">
 			<a class="footer-link" href="{{ U_PRIVACY }}" title="{{ lang('PRIVACY_LINK') }}" role="menuitem">
@@ -38,8 +29,6 @@
 			<a class="footer-link text-strong" href="{{ U_ACP }}">{{ lang('ACP') }}</a>
 		</p>
 		<!-- ENDIF -->
-		</div>
-		<h1 class="ribbon">Style Developed By NecheB <a href="https://phpbb-bg.info/" target="_blank"><img style="margin-bottom:7px;" src="https://phpbb-bg.info/forums/styles/prosilver/theme/images/favi/favicon-16x16.png">PHPBB-BG.INFO</a></h1>
 	</div>
 
 	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="{L_AJAX_ERROR_TITLE}" data-ajax-error-text="{L_AJAX_ERROR_TEXT}" data-ajax-error-text-abort="{L_AJAX_ERROR_TEXT_ABORT}" data-ajax-error-text-timeout="{L_AJAX_ERROR_TEXT_TIMEOUT}" data-ajax-error-text-parsererror="{L_AJAX_ERROR_TEXT_PARSERERROR}">
@@ -58,18 +47,17 @@
 		</a>
 		<div class="alert_text"></div>
 	</div>
-	
 </div>
 
 </div>
-
-
+<!-- INCLUDE footer.html -->
+<div>
 	<a id="bottom" class="anchor" accesskey="z"></a>
 	{% if not S_IS_BOT %}{{ RUN_CRON_TASK }}{% endif %}
-
+</div>
 
 <script src="{T_JQUERY_LINK}"></script>
-<!-- IF S_ALLOW_CDN --><script>window.jQuery || document.write('\x3Cscript src="{T_ASSETS_PATH}/javascript/jquery-3.6.0.min.js?assets_version={T_ASSETS_VERSION}">\x3C/script>');</script><!-- ENDIF -->
+<!-- IF S_ALLOW_CDN --><script>window.jQuery || document.write('\x3Cscript src="{T_ASSETS_PATH}/javascript/jquery-3.7.1.min.js?assets_version={T_ASSETS_VERSION}">\x3C/script>');</script><!-- ENDIF -->
 <script src="{T_ASSETS_PATH}/javascript/core.js?assets_version={T_ASSETS_VERSION}"></script>
 <!-- INCLUDEJS forum_fn.js -->
 <!-- INCLUDEJS ajax.js -->
