@@ -86,11 +86,11 @@ ul.topiclist dfn {
 	float: left;
 	padding-top: 5px;
 	margin-right: 5px;
+	
 }
 
 .forum-image img {
 	max-width: 100%;
-
 }
 
 li.row {
@@ -136,7 +136,7 @@ li.header dl.row-item dt, li.header dl.row-item dd {
 
 li.header dl.row-item dt .list-inner {
 	/* Tweak for headers alignment when folder icon used */
-	padding-left: 50px;
+	padding-left: 0;
 	padding-right: 50px;
 }
 
@@ -237,7 +237,7 @@ dd.option {
 	padding: 0;
 	line-height: 1.48em;
 	width: 76%;
-	float: right;
+	float: left;
 	position: relative;
 }
 
@@ -414,7 +414,6 @@ p.author {
 	font-size: 1em;
 	line-height: 1.2em;
 	clear: both;
-	color: #FFFFFF;
 }
 
 /* Post signature */
@@ -596,7 +595,7 @@ blockquote .codebox {
 
 .attach-image img {
 	border: 1px solid transparent;
-	cursor: url("images/normal.cur"), auto;
+	cursor: default;
 }
 
 /* Inline image thumbnails */
@@ -716,9 +715,10 @@ fieldset.polls dd div {
 .postprofile {
 	margin: 5px 0 10px 0;
 	min-height: 80px;
+	border: 1px solid transparent;
 	border-width: 0 0 0 1px;
 	width: 22%;
-	float: left;
+	float: right;
 	display: inline;
 }
 
@@ -787,7 +787,11 @@ dd.profile-contact {
 	margin-right: -14px;
 }
 
-
+.online {
+	background-image: none;
+	background-position: 100% 0;
+	background-repeat: no-repeat;
+}
 
 /* Poster profile used by search*/
 .search .postprofile {
@@ -876,7 +880,6 @@ table.fixed-width-table {
 	font-size: 1.3em;
 }
 
-.group-description ul {
-	list-style-position: inside;
-
+.group-description ol, .group-description ul {
+	list-style-position: inside;	
 }

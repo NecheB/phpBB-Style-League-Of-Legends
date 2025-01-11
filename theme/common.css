@@ -11,7 +11,6 @@ body {
 	font-size: 10px;
 	line-height: normal;
 	margin: 0;
-	padding: 12px 0;
 	word-wrap: break-word;
 	-webkit-print-color-adjust: exact;
 }
@@ -137,7 +136,13 @@ a:hover	{ text-decoration: underline; }
 
 /* Main blocks
 ---------------------------------------- */
-
+.wrap {
+	border-radius: 8px;
+	margin: 0 auto;
+	max-width: 1152px;
+	min-width: 625px;
+	padding: 15px;
+}
 
 @media only screen and (max-width: 1220px), only screen and (max-device-width: 1220px) {
 	.wrap {
@@ -148,7 +153,6 @@ a:hover	{ text-decoration: underline; }
 .page-body {
 	margin: 4px 0;
 	clear: both;
-	margin-top: 10px;
 }
 
 .page-footer {
@@ -159,13 +163,22 @@ a:hover	{ text-decoration: underline; }
 	margin-top: 20px;
 }
 
-.logo {   
- background-image: url(images/phpbb_logo.png);    
- background-position: center;    
- width: 600px;	
- height: 250px;	margin:auto;	
- }
- 
+.logo {
+	float: left;
+	width: auto;
+	padding: 10px 13px 0 10px;
+}
+
+.logo:hover {
+	text-decoration: none;
+}
+
+.site_logo {
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 149px;
+	height: 52px;
+}
 
 /* Site description and logo */
 .site-description {
@@ -182,33 +195,32 @@ a:hover	{ text-decoration: underline; }
 .headerbar {
 	margin-bottom: 4px;
 	padding: 5px;
-	
+	border-radius: 7px;
 }
 
 .navbar {
 	padding: 3px 10px;
-	
+	border-radius: 7px;
 }
 
 .forabg {
-	margin-bottom: 30px;
+	margin-bottom: 4px;
 	padding: 5px;
 	clear: both;
-	margin-top: 15px;
-	
+	border-radius: 7px;
 }
 
 .forumbg {
 	margin-bottom: 4px;
 	padding: 5px;
 	clear: both;
-	margin-top: 15px;
+	border-radius: 7px;
 }
 
 .panel {
 	margin-bottom: 4px;
 	padding: 5px 10px;
-	
+	border-radius: 7px;
 }
 
 .post {
@@ -216,7 +228,7 @@ a:hover	{ text-decoration: underline; }
 	margin-bottom: 4px;
 	background-repeat: no-repeat;
 	background-position: 100% 0;
-	border: 1px solid #000;
+	border-radius: 7px;
 	position: relative;
 }
 
@@ -653,7 +665,7 @@ table.table1 tbody th {
 }
 
 /* Specific column styles */
-table.table1 .name		{ text-align: left; }
+table.table1 .name		{ text-align: left;     padding: 15px 15px;}
 table.table1 .center		{ text-align: center; }
 table.table1 .reportby		{ width: 15%; }
 table.table1 .posts		{ text-align: center; width: 7%; }
@@ -717,6 +729,10 @@ table.info tbody th {
 	max-width: 100%;
 }
 
+.avatar-rank-container {
+	max-width: 20%;
+}
+
 .left-box.profile-details {
 	width: 80%;
 }
@@ -766,12 +782,6 @@ fieldset.fields1 dd.recipients {
 	margin-left: 1em;
 }
 
-fieldset.fields1 ul.recipients  input.button2 {
-	font-size: 0.8em;
-	margin-right: 0;
-	padding: 0;
-}
-
 fieldset.fields1 dl.pmlist > dt {
 	width: auto !important;
 }
@@ -785,12 +795,10 @@ fieldset.fields1 dl.pmlist dd.recipients {
 .action-bar {
 	font-size: 11px;
 	margin: 4px 0;
-
 }
 
 .forabg + .action-bar {
 	margin-top: 2em;
-	margin-bottom: 30px;
 }
 
 .action-bar .button {
@@ -1001,7 +1009,7 @@ div.rules {
 	margin: 10px 0;
 	font-size: 1.1em;
 	padding: 5px 10px;
-	
+	border-radius: 7px;
 }
 
 div.rules ul, div.rules ol {

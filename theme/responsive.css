@@ -19,6 +19,10 @@
 	.action-bar .search-box .inputbox {
 		width: 120px;
 	}
+
+	.section-viewtopic .search-box .inputbox {
+		width: 57px;
+  	}
 }
 
 @media (max-width: 500px) {
@@ -130,6 +134,8 @@
 	----------------------------------------*/
 	.headerbar, .navbar, .forabg, .forumbg, .post, .panel {
 		border-radius: 0;
+		margin-left: -5px;
+		margin-right: -5px;
 	}
 
 	.cp-main .forabg, .cp-main .forumbg, .cp-main .post, .cp-main .panel {
@@ -144,6 +150,12 @@
 		text-align: center;
 	}
 
+	.logo {
+		/* change display value to inline-block to show logo */
+		display: none;
+		float: none;
+		padding: 10px;
+	}
 
 	.site-description h1, .site-description p {
 		text-align: inherit;
@@ -163,6 +175,10 @@
 	.headerbar + .navbar {
 		margin-top: -5px;
 	}
+
+	/* Search
+	----------------------------------------*/
+	.responsive-search { display: block !important; }
 
 	/* .topiclist lists
 	----------------------------------------*/
@@ -396,6 +412,10 @@
 		clear: both;
 	}
 
+	.avatar-rank-container {
+		max-width: 100%;
+	}
+
 	/* Polls
 	----------------------------------------*/
 	fieldset.polls dt {
@@ -475,7 +495,9 @@
 		top: 15px;
 	}
 
-	
+	.online {
+		background-size: 40px;
+	}
 
 	/* Misc stuff
 	----------------------------------------*/
@@ -524,7 +546,7 @@
 
 @media (min-width: 701px) {
 	.postbody {
-		width: calc(100% - 210px - 1px - 16px);
+		width: calc(100% - 200px - 1px - 16px);
 	}
 
 	.postprofile {
@@ -544,16 +566,4 @@
 	dd.posts, dd.topics, dd.views {
 		width: 80px;
 	}
-}
- @media screen and (max-width: 600px) {
-	 .logo {    
-	 background-image: url(images/phpbb_mobile.png);    
-	 width: 150px;    
-	 height: 200px;	
-	 margin:auto;	
-	 }
-	 
-	 .headerbar{
-	height: 200px;
-}
 }

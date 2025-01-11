@@ -13,7 +13,7 @@
 	vertical-align: middle;
 	-ms-touch-action: manipulation;
 	    touch-action: manipulation;
-	cursor: url(images/pointer.cur), auto;
+	cursor: pointer;
 	-webkit-user-select: none;
 	   -moz-user-select: none;
 	    -ms-user-select: none;
