@@ -1,7 +1,7 @@
 <!-- INCLUDE overall_header.html -->
 
 <!-- EVENT viewtopic_topic_title_before -->
-<h2 class="topic-title extra_box"><!-- EVENT viewtopic_topic_title_prepend --><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a><!-- EVENT viewtopic_topic_title_append --></h2>
+<h2 class="topic-title"><!-- EVENT viewtopic_topic_title_prepend --><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a><!-- EVENT viewtopic_topic_title_append --></h2>
 <!-- EVENT viewtopic_topic_title_after -->
 <!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
 <!-- IF FORUM_DESC --><div style="display: none !important;">{FORUM_DESC}<br /></div><!-- ENDIF -->
@@ -27,7 +27,7 @@
 	</div>
 <!-- ENDIF -->
 
-<div class="action-bar bar-top stats_cont">
+<div class="action-bar bar-top">
 	<!-- EVENT viewtopic_buttons_top_before -->
 
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
@@ -63,11 +63,11 @@
 
 	<!-- IF .pagination or TOTAL_POSTS -->
 		<div class="pagination">
-			<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="mark styled_block">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF --><span class="styled_block">{TOTAL_POSTS}</span>
+			<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="mark">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF -->{TOTAL_POSTS}
 			<!-- IF .pagination -->
 				<!-- INCLUDE pagination.html -->
 			<!-- ELSE -->
-				&bull; <span class="styled_block">{PAGE_NUMBER}</span>
+				&bull; {PAGE_NUMBER}
 			<!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
@@ -136,10 +136,10 @@
 	<!-- IF postrow.S_FIRST_UNREAD -->
 		<a id="unread" class="anchor"<!-- IF S_UNREAD_VIEW --> data-url="{postrow.U_MINI_POST}"<!-- ENDIF -->></a>
 	<!-- ENDIF -->
-	<div id="p{postrow.POST_ID}" class="post has-profile <!-- IF postrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF postrow.S_UNREAD_POST --> unreadpost<!-- ENDIF --><!-- IF postrow.S_POST_REPORTED --> reported<!-- ENDIF --><!-- IF postrow.S_POST_DELETED --> deleted<!-- ENDIF --><!-- IF postrow.POSTER_WARNINGS --> warned<!-- ENDIF -->">
+	<div id="p{postrow.POST_ID}" class="post has-profile <!-- IF postrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF postrow.S_UNREAD_POST --> unreadpost<!-- ENDIF --><!-- IF postrow.S_POST_REPORTED --> reported<!-- ENDIF --><!-- IF postrow.S_POST_DELETED --> deleted<!-- ENDIF --><!-- IF postrow.S_ONLINE and not postrow.S_POST_HIDDEN --> online<!-- ENDIF --><!-- IF postrow.POSTER_WARNINGS --> warned<!-- ENDIF -->">
 		<div class="inner">
 
-		<dl class="postprofile<!-- IF postrow.S_ONLINE and not postrow.S_POST_HIDDEN --> online <!-- ELSE --> offline"<!-- ENDIF -->" id="profile{postrow.POST_ID}"<!-- IF postrow.S_POST_HIDDEN --> style="display: none;"<!-- ENDIF -->>
+		<dl class="postprofile" id="profile{postrow.POST_ID}"<!-- IF postrow.S_POST_HIDDEN --> style="display: none;"<!-- ENDIF -->>
 			<dt class="<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG -->has-profile-rank<!-- ELSE -->no-profile-rank<!-- ENDIF --> <!-- IF postrow.POSTER_AVATAR -->has-avatar<!-- ELSE -->no-avatar<!-- ENDIF -->">
 				<div class="avatar-container">
 					<!-- EVENT viewtopic_body_avatar_before -->
@@ -147,9 +147,9 @@
 						<!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}" class="avatar">{postrow.POSTER_AVATAR}</a><!-- ELSE --><span class="avatar">{postrow.POSTER_AVATAR}</span><!-- ENDIF -->
 					<!-- ENDIF -->
 					<!-- EVENT viewtopic_body_avatar_after -->
-				</div><div class="user_name">
+				</div>
 				<!-- EVENT viewtopic_body_post_author_before -->
-				<!-- IF not postrow.U_POST_AUTHOR --><strong>{postrow.POST_AUTHOR_FULL}</strong><!-- ELSE -->{postrow.POST_AUTHOR_FULL}<!-- ENDIF --></div>
+				<!-- IF not postrow.U_POST_AUTHOR --><strong>{postrow.POST_AUTHOR_FULL}</strong><!-- ELSE -->{postrow.POST_AUTHOR_FULL}<!-- ENDIF -->
 				<!-- EVENT viewtopic_body_post_author_after -->
 			</dt>
 
@@ -399,7 +399,7 @@
 <!-- ENDIF -->
 
 <!-- EVENT viewtopic_body_topic_actions_before -->
-	<div class="action-bar bar-bottom stats_cont">
+	<div class="action-bar bar-bottom">
 	<!-- EVENT viewtopic_buttons_bottom_before -->
 
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
@@ -443,11 +443,11 @@
 
 	<!-- IF .pagination or TOTAL_POSTS -->
 		<div class="pagination">
-			<span class="styled_block">{TOTAL_POSTS}</span>
+			{TOTAL_POSTS}
 			<!-- IF .pagination -->
 				<!-- INCLUDE pagination.html -->
 			<!-- ELSE -->
-				&bull; <span class="styled_block">{PAGE_NUMBER}</span>
+				&bull; {PAGE_NUMBER}
 			<!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
@@ -460,9 +460,9 @@
 
 <!-- IF S_DISPLAY_ONLINE_LIST and U_VIEWONLINE -->
 	<div class="stat-block online-list">
-		<h3 class="extra_box"><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3>
-		<p class="stats_cont">{LOGGED_IN_USER_LIST}</p>
+		<h3><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3>
+		<p>{LOGGED_IN_USER_LIST}</p>
 	</div>
 <!-- ENDIF -->
-
+{% EVENT viewtopic_body_online_list_after %}
 <!-- INCLUDE overall_footer.html -->

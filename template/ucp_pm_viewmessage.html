@@ -22,10 +22,10 @@
 <!-- ENDIF -->
 
 
-<div id="post-{MESSAGE_ID}" class="post pm has-profile<!-- IF S_POST_UNAPPROVED or S_POST_REPORTED --> reported<!-- ENDIF -->">
+<div id="post-{MESSAGE_ID}" class="post pm has-profile<!-- IF S_ONLINE --> online<!-- ENDIF -->">
 <div class="inner">
 
-	<dl class="postprofile<!-- IF S_ONLINE --> online<!-- ELSE --> offline"<!-- ENDIF -->" id="profile{MESSAGE_ID}">
+	<dl class="postprofile" id="profile{MESSAGE_ID}">
 		<dt class="<!-- IF RANK_TITLE or RANK_IMG -->has-profile-rank<!-- ELSE -->no-profile-rank<!-- ENDIF --> <!-- IF AUTHOR_AVATAR -->has-avatar<!-- ELSE -->no-avatar<!-- ENDIF -->">
 			<div class="avatar-container">
 				<!-- EVENT ucp_pm_viewmessage_avatar_before -->
