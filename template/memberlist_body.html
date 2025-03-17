@@ -39,7 +39,7 @@
 		</p>
 	<!-- ELSE -->
 		{% EVENT memberlist_body_page_title_before %}
-		<h2 class="solo">{PAGE_TITLE}<!-- IF SEARCH_WORDS -->{L_COLON} <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
+		<h2 class="solo extra_box">{PAGE_TITLE}<!-- IF SEARCH_WORDS -->{L_COLON} <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
 
 		<div class="action-bar bar-top">
 			<div class="member-search panel">
@@ -52,11 +52,11 @@
 			</div>
 
 			<div class="pagination">
-				{TOTAL_USERS}
+				<span class="styled_block">{TOTAL_USERS}</span>
 				<!-- IF .pagination -->
 					<!-- INCLUDE pagination.html -->
 				<!-- ELSE -->
-					 &bull; {PAGE_NUMBER}
+					 &bull; <span class="styled_block">{PAGE_NUMBER}</span>
 				<!-- ENDIF -->
 			</div>
 		</div>
@@ -169,13 +169,13 @@
 
 </form>
 
-<div class="action-bar bar-bottom">
+<div class="action-bar bar-bottom stats_cont">
 	<div class="pagination">
-		{TOTAL_USERS}
+		<span class="styled_block">{TOTAL_USERS}</span>
 		<!-- IF .pagination -->
 			<!-- INCLUDE pagination.html -->
 		<!-- ELSE -->
-			 &bull; {PAGE_NUMBER}
+			 &bull; <span class="styled_block">{PAGE_NUMBER}</span>
 		<!-- ENDIF -->
 	</div>
 </div>

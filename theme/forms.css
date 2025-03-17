@@ -20,7 +20,7 @@ input {
 select {
 	font-family: Verdana, Helvetica, Arial, sans-serif;
 	font-weight: normal;
-	cursor: pointer;
+	cursor: url(images/pointer.cur), auto;
 	vertical-align: middle;
 	border: 1px solid transparent;
 	padding: 1px;
@@ -49,7 +49,7 @@ textarea {
 }
 
 label {
-	cursor: default;
+	cursor: url("images/normal.cur"), auto;
 	padding-right: 5px;
 }
 
@@ -123,6 +123,7 @@ dd label {
 
 dd input, dd textarea {
 	margin-right: 3px;
+	    color: #000;
 }
 
 dd select {
@@ -326,7 +327,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 }
 
 input[type="search"]::-webkit-search-cancel-button {
-	cursor: pointer;
+	cursor: url(images/pointer.cur), auto;
 }
 
 /* Form button styles
@@ -359,7 +360,7 @@ input.button3 {
 }
 
 input[type="button"], input[type="submit"], input[type="reset"], input[type="checkbox"], input[type="radio"], .search-results li {
-	cursor: pointer;
+	cursor: url(images/pointer.cur), auto;
 }
 
 /* Alternative button */
@@ -398,7 +399,7 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 	border-right-width: 0;
 	border-radius: 4px 0 0 4px;
 	float: left;
-	height: 24px;
+	height: 32px;
 	padding: 3px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -415,7 +416,7 @@ input.button1:focus, input.button2:focus, input.button3:focus {
 	margin-top: 30px;
 }
 
-.search-header .inputbox { border: 0; height: 27px;}
+.search-header .inputbox { border: 0; }
 
 .navbar .linklist > li.responsive-search { display: none; }
 

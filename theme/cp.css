@@ -123,7 +123,7 @@ ul.cplist {
 	position: relative;
 	text-decoration: none;
 	white-space: nowrap;
-	cursor: pointer;
+	cursor: url(images/pointer.cur), auto;
 }
 
 /* CP tabbed menu

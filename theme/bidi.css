@@ -729,6 +729,14 @@ li.breadcrumbs span:first-child > a {
 	text-align: right;
 }
 
+/* Responsive *CP navigation
+----------------------------------------*/
+@media only screen and (max-width: 900px), only screen and (max-device-width: 900px)
+{
+	.rtl .cp-menu, .rtl .navigation, .rtl .cp-main {
+		float: none;
+	}
+}
 
 /* UCP navigation menu
 ----------------------------------------*/
@@ -778,15 +786,6 @@ li.breadcrumbs span:first-child > a {
 /* Avatar gallery */
 .rtl .gallery label {
 	float: right;
-}
-
-/* Responsive *CP navigation
-----------------------------------------*/
-@media only screen and (max-width: 900px), only screen and (max-device-width: 900px)
-{
-	.rtl .cp-menu, .rtl .navigation, .rtl .cp-main {
-		float: none;
-	}
 }
 
 /**

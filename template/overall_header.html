@@ -23,9 +23,9 @@
 <!-- ENDIF -->
 
 <!--
-	Style name:			ColoredLight 
+	Style name:	LeagueOfLegends 
 	Based on style:
-	Original author:	NecheB © phpBB Bulgaria ( https://www.phpbb-bg.info/ )
+	Original author: NecheB © phpBB Bulgaria ( https://www.phpbb-bg.info/ )
 	Modified by:
 -->
 
@@ -47,7 +47,7 @@
 <!-- ENDIF -->
 <link href="{T_FONT_AWESOME_LINK}" rel="stylesheet">
 <link href="{T_STYLESHEET_LINK}" rel="stylesheet">
-<link href="{T_STYLESHEET_LANG_LINK}" rel="stylesheet">
+
 
 <!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
 	<link href="{T_THEME_PATH}/bidi.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
@@ -60,6 +60,7 @@
 <!-- IF S_COOKIE_NOTICE -->
 	<link href="{T_ASSETS_PATH}/cookieconsent/cookieconsent.min.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
 <!-- ENDIF -->
+
 <!--[if lte IE 9]>
 	<link href="{T_THEME_PATH}/tweaks.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
 <![endif]-->
@@ -69,80 +70,34 @@
 {$STYLESHEETS}
 
 <!-- EVENT overall_header_stylesheets_after -->
-
+<link rel="apple-touch-icon" sizes="180x180" href="{T_THEME_PATH}/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{T_THEME_PATH}/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{T_THEME_PATH}/images/favicon-16x16.png">
+<link rel="manifest" href="{T_THEME_PATH}/images/site.webmanifest">
+<link rel="mask-icon" href="{T_THEME_PATH}/images/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 </head>
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
 <body id="phpbb" class="nojs notouch section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} {BODY_CLASS}">
-<!-- INCLUDE navbar_header.html -->
+
 <!-- EVENT overall_header_body_before -->
-<div class="headerbar" role="banner">
-		<!-- EVENT overall_header_headerbar_before -->
-			<div class="inner">
-
-			<div id="site-description" class="site-description">
-				<div class="header_logo"><a href="{% if U_SITE_HOME %}{{ U_SITE_HOME }}{% else %}{{ U_INDEX }}{% endif %}" title="{% if U_SITE_HOME %}{{ L_SITE_HOME }}{% else %}{{ L_INDEX }}{% endif %}">{SITENAME}</a></div>
-				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
-			</div>
-
-			<!-- EVENT overall_header_searchbox_before -->
-			<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-			<div id="search-box" class="search-box search-header" role="search">
-				<form action="{U_SEARCH}" method="get" id="search">
-				<fieldset>
-					<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
-					<button class="button button-search" type="submit" title="{L_SEARCH}">
-						<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">{L_SEARCH}</span>
-					</button>
-					<a href="{U_SEARCH}" class="button button-search-end" title="{L_SEARCH_ADV}">
-						<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">{L_SEARCH_ADV}</span>
-					</a>
-					{S_SEARCH_HIDDEN_FIELDS}
-				</fieldset>
-				</form>
-			</div>
-			<!-- ENDIF -->
-			<!-- EVENT overall_header_searchbox_after -->
-
-			</div>
-			<!-- EVENT overall_header_headerbar_after -->
-		</div>
-		
 <div id="wrap" class="wrap">
 	<a id="top" class="top-anchor" accesskey="t"></a>
 	<div id="page-header">
+		<div class="headerbar" role="banner">
 		
+		<div class="logo"></div> 
+		<!-- EVENT overall_header_headerbar_before -->
+		</div>	
+			<!-- EVENT overall_header_headerbar_after -->
+		</div>
+		<div id="wrap2" class="wrap2">
 		<!-- EVENT overall_header_navbar_before -->
-<ul id="nav-breadcrumbs" class="breadcrumbs-navigation linklist navlinks" role="menubar">
-		{% set MICRODATA = 'itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope' %}
-		{% set navlink_position = 1 %}
-
-		{% EVENT overall_header_breadcrumbs_before %}
-
-		<li class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-
-			{% if U_SITE_HOME %}
-				<span class="crumb" {{ MICRODATA }}><a itemprop="item" href="{{ U_SITE_HOME }}" data-navbar-reference="home"><i class="homebtn icon fa-home fa-fw" aria-hidden="true"></i></a><meta itemprop="position" content="{{ navlink_position }}{% set navlink_position = navlink_position + 1 %}" /></span>
-			{% endif %}
-
-			{% EVENT overall_header_breadcrumb_prepend %}
-				<span class="crumb" {{ MICRODATA }}><a itemprop="item" href="{{ U_INDEX }}" accesskey="h" data-navbar-reference="index">{% if not U_SITE_HOME %}<i class="homebtn icon fa-home fa-fw"></i>{% endif %}</a><meta itemprop="position" content="{{ navlink_position }}{% set navlink_position = navlink_position + 1 %}" /></span>
-
-			{% for navlink in navlinks %}
-				{% set NAVLINK_NAME = navlink.BREADCRUMB_NAME | default(navlink.FORUM_NAME) %}
-				{% set NAVLINK_LINK = navlink.U_BREADCRUMB | default(navlink.U_VIEW_FORUM) %}
-
-				{% EVENT overall_header_navlink_prepend %}
-				<span class="crumb" {{ MICRODATA }}{% if navlink.MICRODATA %} {{ navlink.MICRODATA }}{% endif %}><a itemprop="item" href="{{ NAVLINK_LINK }}"><span itemprop="name">{{ NAVLINK_NAME }}</span></a><meta itemprop="position" content="{{ navlink_position }}{% set navlink_position = navlink_position + 1 %}" /></span>
-				{% EVENT overall_header_navlink_append %}
-			{% endfor %}
-
-			{% EVENT overall_header_breadcrumb_append %}
-		</li>
-
-		{% EVENT overall_header_breadcrumbs_after %}
-
-
-	</ul>
-	</div>
+		<!-- INCLUDE navbar_header.html -->
+	
 
 	<!-- EVENT overall_header_page_body_before -->
 
